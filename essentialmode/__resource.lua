@@ -12,37 +12,37 @@ ui_page 'ui.html'
 
 -- Server
 server_scripts { 
-	'config.lua',
-	'server/util.lua',
-	'server/main.lua',
-	'server/db.lua',
-	'server/classes/player.lua',
-	'server/classes/groups.lua',
-	'server/player/login.lua'
+  'config.lua',
+  'server/util.lua',
+  'server/main.lua',
+  'server/db.lua',
+  'server/classes/player.lua',
+  'server/classes/groups.lua',
+  'server/player/login.lua'
 }
 
 -- Client
 client_scripts {
-	'client/main.lua'
+  'client/main.lua'
 }
 
 -- NUI Files
 files {
-	'ui.html',
-	'pdown.ttf'
+  'ui.html',
+  'pdown.ttf'
 }
 
 exports {
-	'getUser'
+  'getUser'
 }
 
 server_exports {
-	'getPlayerFromId',
-	'addAdminCommand',
-	'addCommand',
-	'addGroupCommand',
-	'addACECommand',
-	'canGroupTarget',
-	'log',
-	'debugMsg',
+  'getPlayerFromId',
+  'addAdminCommand',
+  'addCommand',
+  'addGroupCommand',
+  'addACECommand',
+  'canGroupTarget',
+  'log',
+  'debugMsg',
 }

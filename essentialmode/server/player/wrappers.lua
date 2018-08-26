@@ -1,344 +1,344 @@
 local user = {}
 
 function user.setModel(model)
-	if type(model) == "string" then model = GetHashKey(model) end
+  if type(model) == "string" then model = GetHashKey(model) end
 
-	if IsModelValid(model) then
-		SetPlayerModel(PlayerPedId(), model)
-		return true
-	else
-		return false
-	end
+  if IsModelValid(model) then
+    SetPlayerModel(PlayerPedId(), model)
+    return true
+  else
+    return false
+  end
 end
 
 function user.getRGBColour()
-	local _, r, g, b = GetPlayerRgbColour(PlayerId())
-	return {r = r, g = g, b = b}
+  local _, r, g, b = GetPlayerRgbColour(PlayerId())
+  return {r = r, g = g, b = b}
 end
 
 function user.getTeam()
-	return GetPlayerTeam(PlayerId())
+  return GetPlayerTeam(PlayerId())
 end
 
 function user.setTeam(team)
-	SetPlayerTeam(PlayerId(), team)
+  SetPlayerTeam(PlayerId(), team)
 end
 
 function user.getName()
-	return GetPlayerName(PlayerId())
+  return GetPlayerName(PlayerId())
 end
 
 function user.setWantedLevel(level)
-	SetPlayerWantedLevel(PlayerId(), level, false)
-	SetPlayerWantedLevelNow(PlayerId(), true)
+  SetPlayerWantedLevel(PlayerId(), level, false)
+  SetPlayerWantedLevelNow(PlayerId(), true)
 end
 
 function user.isDead()
-	return IsPlayerDead(PlayerId())
+  return IsPlayerDead(PlayerId())
 end
 
 function user.isPressingHorn()
-	return IsPlayerPressingHorn(PlayerId())
+  return IsPlayerPressingHorn(PlayerId())
 end
 
 function user.setControl(toggle, flags)
-	SetPlayerControl(PlayerId(), toggle, flags)
+  SetPlayerControl(PlayerId(), toggle, flags)
 end
 
 function user.getWantedLevel()
-	return GetPlayerWantedLevel(PlayerId())
+  return GetPlayerWantedLevel(PlayerId())
 end
 
 function user.setMaxWantedLevel(maxWantedLevel)
-	SetMaxWantedLevel(maxWantedLevel)
+  SetMaxWantedLevel(maxWantedLevel)
 end
 
 function user.ignorePolice(toggle)
-	SetPoliceIgnorePlayer(PlayerId(), toggle)
+  SetPoliceIgnorePlayer(PlayerId(), toggle)
 end
 
 function user.isPlaying()
-	return IsPlayerPlaying(PlayerId())
+  return IsPlayerPlaying(PlayerId())
 end
 
 function user.setWantedLevelMultiplier(multiplier)
-	SetWantedLevelMultiplier(multiplier)
+  SetWantedLevelMultiplier(multiplier)
 end
 
 function user.setWantedLevelDifficulty(difficulty)
-	SetWantedLevelDifficulty(PlayerId(), difficulty)
+  SetWantedLevelDifficulty(PlayerId(), difficulty)
 end
 
 function user.resetWantedLevelDifficulty()
-	ResetWantedLevelDifficulty(PlayerId())
+  ResetWantedLevelDifficulty(PlayerId())
 end
 
 function user.reportCrime(crimeType, wantedLvlThresh)
-	return ReportCrime(PlayerId(), crimeType, wantedLvlThresh)
+  return ReportCrime(PlayerId(), crimeType, wantedLvlThresh)
 end
 
 function user.canStartMission()
-	return CanPlayerStartMission(PlayerId())
+  return CanPlayerStartMission(PlayerId())
 end
 
 function user.isTargettingEntity(entity)
-	return IsPlayerTargettingEntity(PlayerId(), entity)
+  return IsPlayerTargettingEntity(PlayerId(), entity)
 end
 
 function user.getTargetEntity()
-	local _, entity = GetPlayerTargetEntity(PlayerId())
-	return entity
+  local _, entity = GetPlayerTargetEntity(PlayerId())
+  return entity
 end
 
 function user.isFreeAiming()
-	return IsPlayerFreeAiming(PlayerId())
+  return IsPlayerFreeAiming(PlayerId())
 end
 
 function user.isFreeAimingAtEntity(entity)
-	return IsPlayerFreeAimingAtEntity(PlayerId(), entity)
+  return IsPlayerFreeAimingAtEntity(PlayerId(), entity)
 end
 
 function user.getFreeAimingEntity()
-	local _, entity = GetEntityPlayerIsFreeAimingAt(PlayerId())
-	return entity
+  local _, entity = GetEntityPlayerIsFreeAimingAt(PlayerId())
+  return entity
 end
 
 function user.setLockonRangeOverride(range)
-	SetPlayerLockonRangeOverride(PlayerId(), range)
+  SetPlayerLockonRangeOverride(PlayerId(), range)
 end
 
 function user.setCanDoDriveBy(toggle)
-	SetPlayerCanDoDriveBy(PlayerId(), toggle)
+  SetPlayerCanDoDriveBy(PlayerId(), toggle)
 end
 
 function user.setCanUseCover(toggle)
-	SetPlayerCanUseCover(PlayerId(), toggle)
+  SetPlayerCanUseCover(PlayerId(), toggle)
 end
 
 function user.isTargettingAnything()
-	return IsPlayerTargettingAnything(PlayerId())
+  return IsPlayerTargettingAnything(PlayerId())
 end
 
 function user.setSprinting(toggle)
-	return SetPlayerSprint(PlayerId(), toggle)
+  return SetPlayerSprint(PlayerId(), toggle)
 end
 
 function user.resetStamina()
-	ResetPlayerStamina(PlayerId())
+  ResetPlayerStamina(PlayerId())
 end
 
 function user.restoreStamina(p1)
-	RestorePlayerStamina(PlayerId(), p1)
+  RestorePlayerStamina(PlayerId(), p1)
 end
 
 function user.getGroup()
-	return GetPlayerGroup(PlayerId())
+  return GetPlayerGroup(PlayerId())
 end
 
 function user.getMaxArmour()
-	return GetPlayerMaxArmour(PlayerId())
+  return GetPlayerMaxArmour(PlayerId())
 end
 
 function user.isInControl()
-	return IsPlayerControlOn(PlayerId())
+  return IsPlayerControlOn(PlayerId())
 end
 
 function user.isClimbing()
-	return IsPlayerClimbing(PlayerId())
+  return IsPlayerClimbing(PlayerId())
 end
 
 function user.isBeingArrested(atArresting)
-	return IsPlayerBeingArrested(PlayerId(), atArresting)
+  return IsPlayerBeingArrested(PlayerId(), atArresting)
 end
 
 function user.getLastVehicle()
-	return GetPlayersLastVehicle()
+  return GetPlayersLastVehicle()
 end
 
 function user.getPed()
-	return PlayerPedId()
+  return PlayerPedId()
 end
 
 function user.setInvincible(toggle)
-	SetPlayerInvincible(PlayerId(), toggle)
+  SetPlayerInvincible(PlayerId(), toggle)
 end
 
 function user.isInVehicle(vehicle, atGetIn)
-	return IsPedInVehicle(PlayerPedId(), vehicle, atGetIn)
+  return IsPedInVehicle(PlayerPedId(), vehicle, atGetIn)
 end
 
 function user.isInAnyVehicle(atGetIn)
-	return IsPedInAnyVehicle(PlayerPedId(), atGetIn)
+  return IsPedInAnyVehicle(PlayerPedId(), atGetIn)
 end
 
 function user.isInjured()
-	return IsPedInjured(PlayerPedId())
+  return IsPedInjured(PlayerPedId())
 end
 
 function user.isHurt()
-	return IsPedHurt(PlayerPedId())
+  return IsPedHurt(PlayerPedId())
 end
 
 function user.isFatallyInjured()
-	return IsPedFatallyInjured(PlayerPedId())
+  return IsPedFatallyInjured(PlayerPedId())
 end
 
 function user.isDeadOrDying()
-	return IsPedDeadOrDying(PlayerPedId(), 1)
+  return IsPedDeadOrDying(PlayerPedId(), 1)
 end
 
 function user.isAimingFromCover()
-	return IsPedAimingFromCover(PlayerPedId())
+  return IsPedAimingFromCover(PlayerPedId())
 end
 
 function user.isReloading()
-	return IsPedReloading(PlayerPedId())
+  return IsPedReloading(PlayerPedId())
 end
 
 function user.isInMeleeCombat()
-	return IsPedInMeleeCombat(PlayerPedId())
+  return IsPedInMeleeCombat(PlayerPedId())
 end
 
 function user.isStopped()
-	return IsPedStopped(PlayerPedId())
+  return IsPedStopped(PlayerPedId())
 end
 
 function user.isShooting()
-	return IsPedShooting(PlayerPedId())
+  return IsPedShooting(PlayerPedId())
 end
 
 function user.setAccuracy(accuracy)
-	SetPedAccuracy(PlayerPedId(), accuracy)
+  SetPedAccuracy(PlayerPedId(), accuracy)
 end
 
 function user.getAccuracy()
-	return GetPedAccuracy(PlayerPedId())
+  return GetPedAccuracy(PlayerPedId())
 end
 
 function user.setArmour(amount)
-	SetPedArmour(PlayerPedId(), amount)
+  SetPedArmour(PlayerPedId(), amount)
 end
 
 function user.setPedIntoVehicle(vehicle, seatIndex)
-	SetPedIntoVehicle(PlayerPedId(), vehicle, seatIndex)
+  SetPedIntoVehicle(PlayerPedId(), vehicle, seatIndex)
 end
 
 function user.isMale()
-	return IsPedMale(PlayerPedId())
+  return IsPedMale(PlayerPedId())
 end
 
 function user.isHuman()
-	return IsPedHuman(PlayerPedId())
+  return IsPedHuman(PlayerPedId())
 end
 
 function user.getVehicle(lastVehicle)
-	return GetVehiclePedIsIn(ped, lastVehicle or false)
+  return GetVehiclePedIsIn(ped, lastVehicle or false)
 end
 
 function user.isOnVehicle()
-	return IsPedOnVehicle(PlayerPedId())
+  return IsPedOnVehicle(PlayerPedId())
 end
 
 function user.isOnFoot()
-	return IsPedOnFoot(PlayerPedId())
+  return IsPedOnFoot(PlayerPedId())
 end
 
 function user.isOnAnyBike()
-	return IsPedOnAnyBike(PlayerPedId())
+  return IsPedOnAnyBike(PlayerPedId())
 end
 
 function user.isPlantingBomb()
-	return IsPedPlantingBomb(PlayerPedId())
+  return IsPedPlantingBomb(PlayerPedId())
 end
 
 function user.isInAnyBoat()
-	return IsPedInAnyBoat(PlayerPedId())
+  return IsPedInAnyBoat(PlayerPedId())
 end
 
 function user.isInAnySub()
-	return IsPedInAnySub(PlayerPedId())
+  return IsPedInAnySub(PlayerPedId())
 end
 
 function user.isInAnyHeli()
-	return IsPedInAnyHeli(PlayerPedId())
+  return IsPedInAnyHeli(PlayerPedId())
 end
 
 function user.isInAnyPlane()
-	return IsPedInAnyPlane(PlayerPedId())
+  return IsPedInAnyPlane(PlayerPedId())
 end
 
 function user.isInFlyingVehicle()
-	return IsPedInFlyingVehicle(PlayerPedId())
+  return IsPedInFlyingVehicle(PlayerPedId())
 end
 
 function user.setDiesInWater(toggle)
-	SetPedDiesInWater(PlayerPedId(), toggle)
+  SetPedDiesInWater(PlayerPedId(), toggle)
 end
 
 function user.setDiesInSinkingVehicle(toggle)
-	SetPedDiesInSinkingVehicle(PlayerPedId(), toggle)
+  SetPedDiesInSinkingVehicle(PlayerPedId(), toggle)
 end
 
 function user.getArmour()
-	return GetPedArmour(PlayerPedId())
+  return GetPedArmour(PlayerPedId())
 end
 
 function user.setCanBeShotInVehicle(toggle)
-	SetPedCanBeShotInVehicle(PlayerPedId(), toggle)
+  SetPedCanBeShotInVehicle(PlayerPedId(), toggle)
 end
 
 function user.isInPoliceVehicle()
-	return IsPedInAnyPoliceVehicle(PlayerPedId())
+  return IsPedInAnyPoliceVehicle(PlayerPedId())
 end
 
 function user.isFalling()
-	return IsPedFalling(PlayerPedId())
+  return IsPedFalling(PlayerPedId())
 end
 
 function user.isJumping()
-	return IsPedJumping(PlayerPedId())
+  return IsPedJumping(PlayerPedId())
 end
 
 function user.isClimbing()
-	return IsPedClimbing(PlayerPedId())
+  return IsPedClimbing(PlayerPedId())
 end
 
 function user.isVaulting()
-	return IsPedVaulting(PlayerPedId())
+  return IsPedVaulting(PlayerPedId())
 end
 
 function user.isDiving()
-	return IsPedDiving(PlayerPedId())
+  return IsPedDiving(PlayerPedId())
 end
 
 function user.isJumpingOutOfVehicle()
-	return IsPedJumpingOutOfVehicle(PlayerPedId())
+  return IsPedJumpingOutOfVehicle(PlayerPedId())
 end
 
 function user.isDucking()
-	return IsPedDucking(PlayerPedId())
+  return IsPedDucking(PlayerPedId())
 end
 
 function user.isInTaxi()
-	return IsPedInAnyTaxi(PlayerPedId())
+  return IsPedInAnyTaxi(PlayerPedId())
 end
 
 function user.setAsGroupLeader(groupId)
-	SetPedAsGroupLeader(PlayerPedId(), groupId)
+  SetPedAsGroupLeader(PlayerPedId(), groupId)
 end
 
 function user.setAsGroupMember(groupId)
-	SetPedAsGroupMember(PlayerPedId(), groupId)
+  SetPedAsGroupMember(PlayerPedId(), groupId)
 end
 
 function user.getType()
-	return GetPedType(PlayerPedId())
+  return GetPedType(PlayerPedId())
 end
 
 function user.setCoords(xPos, yPos, zPos, xAxis, yAxis, zAxis, clearArea)
-	SetEntityCoords(PlayerPedId(), xPos, yPos, zPos, xAxis or 0.0, yAxis or 0.0, zAxis or 0.0, clearArea or false)
+  SetEntityCoords(PlayerPedId(), xPos, yPos, zPos, xAxis or 0.0, yAxis or 0.0, zAxis or 0.0, clearArea or false)
 end
 
 function getUser()
-	return user
+  return user
 end
